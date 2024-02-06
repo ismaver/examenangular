@@ -1,0 +1,21 @@
+<div>
+  <h2>Formulario de Recarga</h2>
+  <form [formGroup]="recargaForm" (ngSubmit)="realizarRecarga()">
+
+    <label for="numeroTelefono">Número de Teléfono:</label>
+    <input type="text" id="numeroTelefono" formControlName="numeroTelefono" placeholder="Ingresa el número de teléfono">
+
+
+    <label for="operador">Operador:</label>
+    <input type="text" id="operador" formControlName="operador" placeholder="Ingresa el operador móvil">
+
+
+    <label for="monto">Monto:</label>
+    <input type="number" id="monto" formControlName="monto" placeholder="Ingresa el monto de la recarga">
+
+
+    <button type="submit" [disabled]="recargaForm.invalid">Realizar Recarga</button>
+  </form>
+
+  <p *ngIf="resultado">{{ resultado }}</p>
+</div>
